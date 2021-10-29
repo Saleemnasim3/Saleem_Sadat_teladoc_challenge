@@ -24,4 +24,4 @@
  
  ##Use 
  
- Use Runner Class to execute the test case.
+ Clone this project and and use the Runner Class to execute the test case.
