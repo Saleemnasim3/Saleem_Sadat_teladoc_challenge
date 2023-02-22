@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class AdministrativeManagementWorkbook extends CommonMethods {
+public class AdministrativeManagementWorkbookPage extends CommonMethods {
 
     @FindBy (xpath = "//a[@href='/#/site/InTouchEnd-to-EndTesting/workbooks/1609']")
     public WebElement administrativManagement;
@@ -15,11 +15,16 @@ public class AdministrativeManagementWorkbook extends CommonMethods {
     @FindBy (xpath = "//section[@data-tb-test-id='tb-card-view-active-section']")
     public List <WebElement> programOverview;
 
+    /*
+    To navigate back so that 'Appointment Overview Page is visible'
+     */
+
+    @FindBy (xpath = "//a[@href='/#/site/InTouchEnd-to-EndTesting/projects/560']")
+    public WebElement backButton;
 
 
 
-
-    public AdministrativeManagementWorkbook (){
+    public AdministrativeManagementWorkbookPage (){
         PageFactory.initElements(driver,this);
     }
 
