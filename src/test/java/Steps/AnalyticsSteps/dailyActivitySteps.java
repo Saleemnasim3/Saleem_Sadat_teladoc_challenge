@@ -37,6 +37,8 @@ Daily Activity View of Administrative Workbook
 
         System.out.println(expectedMetrics);
         System.out.println(actualMetrics);
+
+        driver.navigate().back();
     }
 
 

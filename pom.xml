@@ -16,6 +16,8 @@
     <dependencies>
 
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+        <!--  This will add the selenium-java library to the project's classpath, allowing the project to use the
+        Selenium WebDriver API to interact with web browsers. -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
@@ -31,6 +33,10 @@
 
 
         <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+
+        <!-- The commons-io library provides a variety of classes for working with files, streams, and other I/O operations.
+        Some of the key classes in the library include:-->
+
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
@@ -51,6 +57,14 @@
             <version>6.9.1</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/net.masterthought/cucumber-reporting -->
+        <dependency>
+            <groupId>net.masterthought</groupId>
+            <artifactId>cucumber-reporting</artifactId>
+            <version>5.7.5</version>
+        </dependency>
+
 
 
     </dependencies>

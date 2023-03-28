@@ -45,6 +45,8 @@ DevicesPage devicespage2 = new DevicesPage();
            }
         System.out.println(actualDropdowns);
 
+        driver.navigate().back();
+
     }
 
 }

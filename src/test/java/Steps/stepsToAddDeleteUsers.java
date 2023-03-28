@@ -2,115 +2,47 @@ package Steps;
 
 import Pages.AddDelete;
 import Utils.CommonMethods;
+import Utils.ConfigReader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
-
-import java.util.List;
 
 public class stepsToAddDeleteUsers extends CommonMethods {
 
-    String firstname = "FirstTest";
 
-
-    @Given("Engr Candidate is on main page")
-    public void engr_candidate_is_on_main_page() {
+    @Given("user is on the welcome page")
+    public void user_is_on_the_welcome_page() {
         setUp();
-
     }
 
-
-    @When("Engr Candidate clicks on Add User button")
-    public void engr_candidate_clicks_on_add_user_button() {
+    @When("user clicks Continue in Browser Button")
+    public void user_clicks_continue_in_browser_button() {
         AddDelete obj = new AddDelete();
-        click(obj.addUserButton);
+        getWait();
+        click(obj.continueInBrowser);
+
     }
 
-
-
-    @When("Engr Candidate enters firstname, lastname, username, password, select customer, role, enters email, cell phone")
-    public void engr_candidate_enters_firstname_lastname_username_password_select_customer_role_enters_email_cell_phone() {
+    @When("user enters correct credentials in the Username and Password boxes")
+    public void user_enters_correct_credentials_in_the_username_and_password_boxes() {
         AddDelete obj = new AddDelete();
-        sendText(obj.firstname, firstname);
-        sendText(obj.lastname, "LastTest");
-        sendText(obj.username, "FLTest");
-        sendText(obj.password, "123456");
-
-
-
-        click(obj.Role);
-        Select role = new Select(obj.Role);
-        List<WebElement> list = role.getOptions();
-        for (WebElement vlaues : list) {
-            String text = vlaues.getText();
-            if (text.equalsIgnoreCase("Customer")) {
-
-                role.selectByVisibleText("Customer");
-            }
-        }
-
-        sendText(obj.Email, "test@yahoo.com");
-        sendText(obj.cellPhone, "123456789");
-
-
+        sendText(obj.Username, ConfigReader.getPropertyValue("username"));
+        sendText(obj.Password, ConfigReader.getPropertyValue("password"));
     }
 
-    @When("Engr Candidate clicks on save button option")
-    public void engr_candidate_clicks_on_save_button_option() {
+    @When("user clicks on Sign In button")
+    public void user_clicks_on_sign_in_button() {
         AddDelete obj = new AddDelete();
-        click(obj.saveButton);
+        click(obj.Login);
+    }
+
+    @Then("user should land on dashboard")
+    public void user_should_land_on_dashboard() {
+        System.out.println("Insert Assertion here");
     }
 
 
-    @Then("verify user is added")
-    public void user_should_be_added_to_the_main_page() {
-        AddDelete obj = new AddDelete();
-        for (WebElement element : obj.nameVerfication) {
-            String firstnameText = element.getText();
-            if (firstnameText.contains(firstname)) {
-                System.out.println("user successfully added");
-                break;
-            }
-        }
-    }
-
-    @When("Engr Candidate clicks on the remove X button")
-    public void engr_candidate_clicks_on_the_remove_x_button() throws InterruptedException {
-        AddDelete obj = new AddDelete();
-        Dynamictable(obj.rowValue, "Mark");
-    }
-
-    @When("Engr Candidate clicks on okay button")
-    public void engr_candidate_clicks_on_okay_button() {
-        AddDelete obj=new AddDelete();
-        click(obj.okButton);
-    }
-
-
-    @Then("verify the user is deleted")
-    public void verify_the_user_is_deleted() {
-        AddDelete obj = new AddDelete();
-
-        boolean flag = true;
-        for (WebElement LastNames: obj.dletionVerification) {
-            String allLastNames=LastNames.getText();
-            System.out.println(allLastNames);
-            if(allLastNames.contains("Novak")){
-                flag=false;
-                break;
-            }
-        }
-
-        Assert.assertTrue(flag);
-
-
-
-
-
-    }
 }
+
 
 

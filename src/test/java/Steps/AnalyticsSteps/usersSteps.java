@@ -34,15 +34,16 @@ public class usersSteps extends CommonMethods {
 
         System.out.println(expecteddropDowns);
 
-        List <String> actualDropdowns= new ArrayList<>();
+        List<String> actualDropdowns = new ArrayList<>();
 
-        for (WebElement alldropdowns:userspage.dropdowns) {
+        for (WebElement alldropdowns : userspage.dropdowns) {
             actualDropdowns.add(alldropdowns.getText());
         }
         System.out.println(actualDropdowns);
 
+        driver.navigate().back();
     }
-    }
+}
 
 
 

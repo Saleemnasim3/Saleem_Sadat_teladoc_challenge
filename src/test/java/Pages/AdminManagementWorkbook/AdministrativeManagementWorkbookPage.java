@@ -1,4 +1,4 @@
-package Pages;
+package Pages.AdminManagementWorkbook;
 
 import Utils.CommonMethods;
 import org.openqa.selenium.WebElement;

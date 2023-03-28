@@ -24,7 +24,7 @@ public class CareLocationStpes extends CommonMethods {
     @Then("user can see text that reads {string}")
     public void user_can_see_text_that_reads(String string) {
 
-      //  printTex(careLocationPage.Text);
+        //  printTex(careLocationPage.Text);
         System.out.println("Cant find the xpath. Figure out why");
 
     }
@@ -36,23 +36,13 @@ public class CareLocationStpes extends CommonMethods {
         List<String> actualCareLocationDropDowns = dataTable.asList();
         System.out.println(actualCareLocationDropDowns);
 
-        List <String> expectedCareLocationDD = new ArrayList<>();
-        for (WebElement alldd:careLocationPage.CareLocationsDropdowns) {
+        List<String> expectedCareLocationDD = new ArrayList<>();
+        for (WebElement alldd : careLocationPage.CareLocationsDropdowns) {
             expectedCareLocationDD.add(alldd.getText());
 
         }
 
         System.out.println(expectedCareLocationDD);
-
-
-
-
-
-
-
-
-
-
 
 
     }

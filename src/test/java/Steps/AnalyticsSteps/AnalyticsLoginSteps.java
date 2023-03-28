@@ -1,7 +1,6 @@
 package Steps.AnalyticsSteps;
 
 import Pages.*;
-import Pages.AdminManagementWorkbook.AdminManagWorkbkProgramOverviewPage;
 import Pages.AdminManagementWorkbook.AdministrativeManagementWorkbookPage;
 import Utils.CommonMethods;
 import Utils.ConfigReader;
@@ -258,7 +257,7 @@ public class AnalyticsLoginSteps extends CommonMethods {
     }
 
     @Then("user should be able to see the following tabs:")
-    public void user_should_be_able_to_see_the_following_tabs(DataTable dataTable) {
+    public void user_should_be_able_to_see_the_following_tabs(DataTable dataTable) throws InterruptedException {
         ReliabilityWorkbookPage reliabilityWorkbookPage = new ReliabilityWorkbookPage();
 
         List<String> expectedReliabWrkBkviews = dataTable.asList();
@@ -268,79 +267,21 @@ public class AnalyticsLoginSteps extends CommonMethods {
             actualdReliabWrkBkviews.add(allReliabilityViews.getText());
         }
 
+        System.out.println(actualdReliabWrkBkviews);
 
-    }
+        driver.navigate().back();
 
-    /*
-    Verify elements on Program overviw view
-     */
-
-    @When("user navigates to Program Overview view of this workbook")
-    public void user_navigates_to_program_overview_view_of_this_workbook() throws InterruptedException {
-       AdminManagWorkbkProgramOverviewPage programOverview = new AdminManagWorkbkProgramOverviewPage();
-       click(programOverview.ProgramOverview);
-
-    }
-
-    @Then("user can see Session Date")
-    public void user_can_see_session_date() {
-        AdminManagWorkbkProgramOverviewPage programOverview = new AdminManagWorkbkProgramOverviewPage();
-
-        goToiFrame(0); // will switch to iFrame in 0th index. See implmentatino in the CommonMethods Class
-
-        printTex(programOverview.SessionDateFilter);
-        }
-
-    @Then("user can see Program Type")
-    public void user_can_see_program_type() throws InterruptedException {
-        AdminManagWorkbkProgramOverviewPage programOverview1 = new AdminManagWorkbkProgramOverviewPage();
-        Thread.sleep(5000);
-        printTex(programOverview1.ProgramTypeKey);
-        }
-
-
-    @Then("user should be able to see the following dropdowns")
-    public void user_should_be_able_to_see_the_following_dropdowns(DataTable dataTable) {
-
-        AdminManagWorkbkProgramOverviewPage programOverview2 = new AdminManagWorkbkProgramOverviewPage();
-
-        List <String> expecteDropdowns = dataTable.asList();
-
-        List <String> actualDropdowns= new ArrayList<>();
-
-        for (WebElement allexpectedDropdowns:programOverview2.dropdowns) {
-            actualDropdowns.add(allexpectedDropdowns.getText());
-        }
-
-
-        System.out.println("Expected Dropdowns:"+ expecteDropdowns);
-        System.out.println("Actual Dropdowns:" + actualDropdowns);
-        System.out.println("-------------");
-
-    }
-    @Then("user should be able to see the following metrics")
-    public void user_should_be_able_to_see_the_following_metrics(DataTable dataTable) {
-        AdminManagWorkbkProgramOverviewPage programOverviewPage3 = new AdminManagWorkbkProgramOverviewPage();
-
-        List <String> expectedMetrics = dataTable.asList();
-
-        List <String> actualMetrics = new ArrayList<>();
-
-        for (WebElement allExpectedMetics:programOverviewPage3.TableMtrics) {
-            actualMetrics.add(allExpectedMetics.getText());
-        }
-
-        //Assert.assertTrue(expectedMetrics.equals(actualMetrics));
-        System.out.println("Expected Metrics:"+ expectedMetrics);
-        System.out.println("Actual Metrics:" + actualMetrics);
+        Thread.sleep(3000);
 
 
     }
 
 
 
+    }
 
-}
+
+
 
 
 

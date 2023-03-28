@@ -1,0 +1,12 @@
+1- How can I have seperate config.properties file for every feature, as the url is different for different features. Now when I try to triger the test, It takes the
+values from "config.properties" file, not the other files.
+
+2- how to stop a test that is already being run. Answer: Click on the stop button in the Run tool
+3- Create all in one feature file and Page and step. Once end to end testing for analytics is complete then spread it to multiple pages and step defincations and feature files
+
+4-Now that testing for analytics workflow is complete, figure out how to put everthing in the right place and run the case from your runner class. Next steps would be to run it from
+Jenkins.
+5-Runner Class done, now see how you can get a report of your test run.
+6- Now that I can create a cucumber report by adding a dependency in pom.xml file and by adding the plugin in the runner file and by adding the
+cucumber.properties under Resources directory, let's create a jenkins jobs for my project and run this project from jenkins.
+
