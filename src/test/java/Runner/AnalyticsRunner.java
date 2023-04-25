@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         monochrome = true,
         strict = true,
         tags = "",
-        plugin = {"pretty", "html:target/cucumber-reports/"}
+        plugin = {"pretty", "html:target/cucumber-reports/"} // this will create a report for us under target folder
 
 
 )

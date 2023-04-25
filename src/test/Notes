@@ -10,3 +10,25 @@ Jenkins.
 6- Now that I can create a cucumber report by adding a dependency in pom.xml file and by adding the plugin in the runner file and by adding the
 cucumber.properties under Resources directory, let's create a jenkins jobs for my project and run this project from jenkins.
 
+7- Error figure out why is Jenkins not running my code. If it deosnt work. Do not dwell on it. Move on to how to run your test case from the command prompt.
+and then keep automating mor scenarios and add to your framework.
+8- Having errors in running my mvn project from cmd. Move on to continue work on the framework and automate other scenarios. Also work on how to do print screen.
+
+9- How to take screenshot of failed cases?
+Implement the after() hook: Use the @After hook provided by Cucumber to capture a screenshot of the failed scenario. In the after() method,
+check if the scenario has failed using the isFailed() method of the Scenario object. If it has failed, capture the screenshot using the TakesScreenshot
+interface and save it to a file. For example:
+@After
+public void afterScenario(Scenario scenario) {
+   if (scenario.isFailed()) {
+      TakesScreenshot screenshot = (TakesScreenshot) driver;
+      byte[] screenshotData = screenshot.getScreenshotAs(OutputType.BYTES);
+      scenario.attach(screenshotData, "image/png", "screenshot");
+   }
+}
+In this example, the screenshot is captured using the getScreenshotAs() method of the TakesScreenshot interface and stored as an array of bytes. The scenario.attach() method is
+then used to attach the screenshot to the failed scenario.
+
+9- How to read and write file from excel workbook/or test a dynamic table or a calendar.
+
+

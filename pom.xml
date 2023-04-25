@@ -59,6 +59,7 @@
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/net.masterthought/cucumber-reporting -->
+        <!--  This dependency is for report generation. -->
         <dependency>
             <groupId>net.masterthought</groupId>
             <artifactId>cucumber-reporting</artifactId>
@@ -66,12 +67,9 @@
         </dependency>
 
 
-
     </dependencies>
 
-    <build>
 
-    </build>
 
 </project>
 
