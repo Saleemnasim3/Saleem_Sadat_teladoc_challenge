@@ -67,6 +67,20 @@
         </dependency>
 
 
+<!--apache.poi is an API that contains libraries and it enables us to work with microsoft office files such as excel, word, powerpoint. apache poi is implemented by apache
+ foundation and it is open source-->
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi</artifactId>
+                <version>5.2.2</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>5.2.2</version>
+            </dependency>
+
+
     </dependencies>
 
 
